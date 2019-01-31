@@ -2,7 +2,7 @@
 * @Author: GeekWho
 * @Date:   2018-10-27 17:21:34
 * @Last Modified by:   GeekWho
-* @Last Modified time: 2018-11-08 02:04:23
+* @Last Modified time: 2019-01-31 20:36:26
 */
 package main
 
@@ -13,16 +13,18 @@ import (
     "fmt"
 )
 
+// 定义rot13Reader结构体
 type rot13Reader struct {
     r io.Reader
 }
-//自定义错误类型
+// 自定义错误类型
 type ErrNegativeByte string
-//实现Error接口
+// 实现Error接口
 func (e ErrNegativeByte) Error() string {
     return fmt.Sprintf("get Byte error: %v",e)
 }
 
+// 实现rot13Reader的方法，主要输入参数b []byte，输出为int, error
 func (r rot13Reader) Read(b []byte) (n int, err error) {
     //return 0, ErrNegativeByte("length is empty")
     //判断b的长度类型是否正确
@@ -30,6 +32,7 @@ func (r rot13Reader) Read(b []byte) (n int, err error) {
         return len(b), ErrNegativeByte("length is empty")
     }
 
+    // 读取输入，返回长度
     n,err = r.r.Read(b)
 
     if err != nil {
@@ -47,6 +50,7 @@ func (r rot13Reader) Read(b []byte) (n int, err error) {
     //return 返回默认值
 }
 
+// 实现算法
 func rot13(b byte) byte {
     var a, z byte
     switch {
@@ -60,6 +64,7 @@ func rot13(b byte) byte {
     return (b-a+13)%(z-a+1) + a
 }
 
+// 根据interface获取类型
 func typeof(v interface{}) string {
     return fmt.Sprintf("%T", v)
 }
