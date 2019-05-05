@@ -2,14 +2,14 @@
 * @Author: GeekWho
 * @Date:   2018-10-27 17:20:59
 * @Last Modified by:   GeekWho
-* @Last Modified time: 2018-10-28 17:36:06
+* @Last Modified time: 2019-03-05 23:01:22
 */
 package main
 
 import (
     "fmt"
 )
-
+//定义名叫ErrNegativeSqrt的类型，返回值为float64
 type ErrNegativeSqrt float64
 
 func (e ErrNegativeSqrt) Error() string {

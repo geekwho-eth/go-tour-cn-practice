@@ -2,7 +2,7 @@
 * @Author: GeekWho
 * @Date:   2018-10-27 17:22:52
 * @Last Modified by:   GeekWho
-* @Last Modified time: 2018-11-18 15:52:35
+* @Last Modified time: 2019-02-03 12:34:07
 */
 package main
 
@@ -12,6 +12,7 @@ import (
     //"time"
 )
 
+// 定义Fetcher的接口，必须实现Fetch方法，输入参数为url string ，返回值有3个，body的字符串，urls的字符串数组，err的error类型变量
 type Fetcher interface {
     // Fetch 返回 URL 的 body 内容，并且将在这个页面上找到的 URL 放到一个 slice 中。
     Fetch(url string) (body string, urls []string, err error)
