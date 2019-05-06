@@ -11,5 +11,6 @@
 7. [练习.Reader](./tour.go-zh.org/exercise-reader.go)
 8. [练习.rot13Reader](./tour.go-zh.org/exercise-rot-reader.go)
 9. [练习.图像](./tour.go-zh.org/exercise-images.go)
-10. [练习.等价二叉查找树](./tour.go-zh.org/exercise-equivalent-binary-trees.go)
-11. [练习.Web 爬虫](./tour.go-zh.org/exercise-web-crawler.go)
+10. [练习.范型](./tour.go-zh.org/exercise-generics-type.go)
+11. [练习.等价二叉查找树](./tour.go-zh.org/exercise-equivalent-binary-trees.go)
+12. [练习.Web 爬虫](./tour.go-zh.org/exercise-web-crawler.go)
